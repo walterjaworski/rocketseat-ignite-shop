@@ -19,6 +19,7 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
+  console.log({ product })
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
 
   async function handleBuyProduct() {
@@ -79,7 +80,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: [
       { params: { id: 'prod_OFGjONIwFyySIR' } }
     ],
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
